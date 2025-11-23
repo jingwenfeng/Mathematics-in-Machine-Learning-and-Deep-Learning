@@ -39,11 +39,10 @@ Optional but useful for your workflow:
 A typical `midiphrase` project layout looks like this:
 
 ```text
-your-project/
+music-segmentation-toolkit-with-gpt/
   README.md
   pyproject.toml
-  requirements.txt          # optional, for your dev environment
-  main_rhythm.ipynb         # your original notebook (optional, for reference)
+  requirements.txt          
   midiphrase/
     __init__.py
     midi_processing.py
@@ -93,7 +92,6 @@ git clone <your-repo-url> midiphrase-project
 cd midiphrase-project
 ```
 
-Replace `<your-repo-url>` with your actual repository URL if you use git.
 
 ### 3.2 Create and activate a virtual environment
 
@@ -189,14 +187,21 @@ If you prefer not to expose your key in the shell:
    OPENAI_API_KEY=your_api_key_here
    ```
 
-2. In **your own scripts or notebooks**, load it like:
+   In Windows you can also do:
+
+    ```bash
+    notepad .env
+    setx OPENAI_API_KEY "your_api_key_here"
+    ```
+
+3. In **your own scripts or notebooks**, load it like:
 
    ```python
    from dotenv import load_dotenv
    load_dotenv()  # reads the .env file
    ```
 
-3. After that, `midiphrase` will find `OPENAI_API_KEY` from the environment.
+4. After that, `midiphrase` will find `OPENAI_API_KEY` from the environment.
 
 > Inside the **library**, we do **not** hard-depend on `python-dotenv`.  
 > It is your choice whether to use it at the application level.
