@@ -1,4 +1,0 @@
-openai>=1.0.0
-pretty_midi>=0.2.10
-python-dotenv>=1.0.0
-pytest>=8.0.0
